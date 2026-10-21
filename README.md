@@ -66,7 +66,7 @@ cargo run
 
 `cargo lint` 与 `cargo nt` 定义在 `.cargo/config.toml`。
 
-> 模板仓库的 `Cargo.toml` 保留占位符，cargo 命令需在生成后的项目中执行；CI 会先归一化占位符。
+> 模板仓库的 `Cargo.toml` 保留占位符，cargo 命令需在生成后的项目中执行。
 
 ## 项目结构
 
@@ -81,7 +81,6 @@ cargo run
 ## CI 与发布
 
 - push 到 `main` / PR：`typos`、`cargo deny check`、`cargo fmt --check`、`clippy`、`nextest`
-- 生成产物：`cargo generate` 后在产物中执行 `cargo fmt --check`、`clippy`、`nextest`
 - push tag `v*`：创建 GitHub Release，正文由 `git-cliff` 生成
 - 提交信息需遵循 Conventional Commits
 
